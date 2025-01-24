@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="atm.css">
+    <title>ATM Interface</title>
+
+</head>
+
+<body>
+
+    <!-- PIN Input -->
+    <div id="pin-container" class="container active">
+        <h1>POWER BANK</h1>
+        <h3>Enter PIN</h3>
+        <input type="password" id="pin" placeholder="Enter PIN" maxlength="4">
+        <button onclick="validatePin()">Submit</button>
+        <p id="pin-error" style="color: red;"></p>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="menu-container" class="container">
+        <h2>ATM Menu</h2>
+        <button onclick="showContainer('balance-container')">Check Balance</button>
+        <button onclick="showContainer('deposit-container')">Deposit</button>
+        <button onclick="showContainer('withdraw-container')">Withdraw</button>
+        <button onclick="showContainer('change-pin-container')">Change PIN</button>
+        <button onclick="logout()">EXIT</button>
+    </div>
+
+    <!-- Check Balance -->
+    <div id="balance-container" class="container">
+        <h2>Your Balance</h2>
+        <p id="balance">$1000.00</p>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Deposit -->
+    <div id="deposit-container" class="container">
+        <h2>Deposit Money</h2>
+        <input type="number" id="deposit-amount" placeholder="Enter amount">
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Withdraw -->
+    <div id="withdraw-container" class="container">
+        <h2>Withdraw Money</h2>
+        <input type="number" id="withdraw-amount" placeholder="Enter amount">
+        <button onclick="withdraw()">Withdraw</button>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Change PIN -->
+    <div id="change-pin-container" class="container">
+        <h2>Change PIN</h2>
+        <input type="password" id="current-pin" placeholder="Enter Current PIN" maxlength="4">
+        <input type="password" id="new-pin" placeholder="Enter New PIN" maxlength="4">
+        <input type="password" id="confirm-new-pin" placeholder="Confirm New PIN" maxlength="4">
+        <button onclick="changePin()">Change PIN</button>
+        <button onclick="goBack()">Back</button>
+        <p id="change-pin-error" style="color: red;"></p>
+        <p id="change-pin-success" style="color: green;"></p>
+    </div>
+    <script src="index.js" defer></script>
+</body>
+
+</html>
